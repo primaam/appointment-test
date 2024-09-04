@@ -17,7 +17,7 @@ interface EventsAttributes {
     created_at: Date;
 }
 
-interface EventsCreationAttributes extends Optional<EventsAttributes, 'events_id' | 'rejection_remarks' | 'confirmed_date' | 'created_at'> {}
+interface EventsCreationAttributes extends Optional<EventsAttributes, 'events_id' | 'rejection_remarks' | 'confirmed_date' | 'created_at' | 'status'> {}
 
 class Events extends Model<EventsAttributes, EventsCreationAttributes> implements EventsAttributes {
     public events_id!: number;
