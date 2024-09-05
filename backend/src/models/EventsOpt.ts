@@ -1,6 +1,7 @@
 import { DataTypes, Model, Optional } from "sequelize";
 import { sequelize } from "../config/database";
 import User from "./User";
+import Events from "./Events";
 
 interface EventsOptAttributes {
     events_opt_id: number;
@@ -46,5 +47,7 @@ EventsOpt.init({
     tableName: 'events_opt',
     timestamps: false 
 });
+
+EventsOpt.hasMany(Events, { foreignKey: 'events_opt_id' });
 
 export default EventsOpt;

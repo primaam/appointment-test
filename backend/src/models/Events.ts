@@ -101,4 +101,8 @@ Events.init({
     timestamps: false, 
 });
 
+Events.belongsTo(EventsOpt, { foreignKey: 'events_opt_id' });
+Events.belongsTo(User, { foreignKey: 'hr_id', as: 'HR' });
+Events.belongsTo(User, { foreignKey: 'vendor_id', as: 'Vendor' });
+
 export default Events;

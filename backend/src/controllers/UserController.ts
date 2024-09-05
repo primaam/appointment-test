@@ -20,7 +20,14 @@ const login = async (req: Request, res: Response) =>{
             { expiresIn: '1h' } 
         );
 
-        return res.json({ token });
+        return res.status(201).json({ 
+            token,
+            user:{
+                userId: user.user_id,
+                role: user.role,
+                companyName: user.company_name
+            }
+         });
     } catch (error) {
         console.error('Login error:', error);
         return res.status(500).json({ message: 'Server Error' });

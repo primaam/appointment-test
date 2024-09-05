@@ -1,5 +1,6 @@
 import {DataTypes, Model, Optional} from "sequelize"
 import { sequelize } from "../config/database"
+import Events from "./Events";
 
 interface UserAttributes{
     user_id: number;
@@ -54,5 +55,8 @@ User.init({
     tableName: 'users',
     timestamps: false,
 });
+
+User.hasMany(Events, { foreignKey: 'hr_id', as: 'HR' });
+User.hasMany(Events, { foreignKey: 'vendor_id', as: 'Vendor' });
 
 export default User;

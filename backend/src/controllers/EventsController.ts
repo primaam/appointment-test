@@ -47,11 +47,11 @@ const getEventsByRole = async(req:Request, res: Response)=>{
                 where: {vendor_id : id},
                 include:[
                     {model: EventsOpt, attributes: ['events_opt_name']},
-                    {model: User, attributes: ['company_name']}
+                    {model: User,as: "Vendor", attributes: ['company_name']}
                 ]
             })
 
-            return res.json(events);
+            return res.status(200).json(events);
         }else{
             return res.status(403).json({ message: 'Access Denied' });
         }

@@ -30,3 +30,31 @@ CREATE TABLE events (
     confirmed_date DATE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+-- add pre account user
+INSERT INTO users (username, password, company_name, role)
+VALUES ('hr1', 'hrpass1', 'Company HR 1', 'HR'),
+    ('hr2', 'hrpass2', 'Company HR 2', 'HR'),
+    (
+        'vendor1',
+        'vendorpass1',
+        'Company Vendor 1',
+        'VENDOR'
+    ),
+    (
+        'vendor2',
+        'vendorpass2',
+        'Company Vendor 2',
+        'VENDOR'
+    ),
+    (
+        'vendor3',
+        'vendorpass3',
+        'Company Vendor 3',
+        'VENDOR'
+    ),
+    (
+        'vendor4',
+        'vendorpass4',
+        'Company Vendor 4',
+        'VENDOR'
+    );
